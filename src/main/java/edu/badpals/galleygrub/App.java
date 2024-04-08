@@ -18,10 +18,8 @@ package edu.badpals.galleygrub;
  * Intenta hacer como que programas si no quieres terminar
  * en la cocina ayudando a Bob a preparar Krusty Burguers.
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
 
         /**
          * Crea un diccionario con los precios
@@ -38,3 +36,4 @@ public class App
          */
 
     }
+}
