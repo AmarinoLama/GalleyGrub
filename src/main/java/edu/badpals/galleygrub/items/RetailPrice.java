@@ -24,7 +24,8 @@ public class RetailPrice {
     public String toString() {
         StringBuilder salida = new StringBuilder();
         for (Map.Entry<String, Double> price : prices.entrySet()) {
-            salida.append(price.getKey())
+            salida.append("\t")
+                    .append(price.getKey())
                     .append("=")
                     .append(price.getValue())
                     .append("\n");

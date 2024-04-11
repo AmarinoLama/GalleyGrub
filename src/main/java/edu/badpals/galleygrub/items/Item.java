@@ -39,11 +39,12 @@ public class Item implements Product{
 
     @Override
     public String toString() {
-        return "Item{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", extra='" + extra + '\'' +
-                '}';
+        StringBuilder salida = new StringBuilder();
+        salida.append(name())
+                .append("....")
+                .append(price())
+                .append("$");
+        return salida.toString();
     }
 
 
