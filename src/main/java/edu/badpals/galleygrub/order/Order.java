@@ -2,41 +2,53 @@ package edu.badpals.galleygrub.order;
 
 import edu.badpals.galleygrub.items.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Comanda {
+
+    private Double total;
+    private List<Item> items = new ArrayList<>();
+
     @Override
     public void addItem(String name, double price) {
-
+        items.add(new Item(name, price));
     }
 
     @Override
     public void addItem(String name, double price, String extra) {
-
+        items.add(new Item(name, price, extra));
     }
 
     @Override
     public int size() {
-        return 0;
+        return items.size();
     }
 
     @Override
     public List<Item> itemList() {
-        return null;
+        return items;
     }
 
     @Override
     public Double getTotal() {
-        return null;
+        return total;
     }
 
     @Override
     public void updateTotal(Double total) {
-
+        double counter = 0d;
+        for (Item item: items) {
+            counter += item.price();
+        }
+        this.total = counter;
     }
 
     @Override
     public void display() {
-
+        System.out.print("\n\t --- ORDER ---  \n");
+        for (Item item: items) {
+            System.out.println("\t" + item.toString());
+        }
     }
 }
