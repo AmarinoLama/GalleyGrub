@@ -13,7 +13,7 @@ import edu.badpals.galleygrub.order.Order;
  * Krabby Patty.
  * El restaurante tiene un menu llamado Galley Grub
  * que puedes leer aquí:
- * https://spongebob.fandom.com/wiki/Galley_Grub
+ *
  *
  * Las comandas son anotadas a mano por Squidward Tentacles.
  * El propierario Eugene H. Krabs -un agarrao-
