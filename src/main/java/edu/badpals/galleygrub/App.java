@@ -5,6 +5,8 @@ import edu.badpals.galleygrub.items.Product;
 import edu.badpals.galleygrub.items.RetailPrice;
 import edu.badpals.galleygrub.order.Comanda;
 import edu.badpals.galleygrub.order.Order;
+import edu.badpals.galleygrub.receipt.Receipt;
+import edu.badpals.galleygrub.receipt.Ticket;
 
 /**
  *
@@ -110,6 +112,16 @@ public class App {
         order.addItem("Seafoam Soda", 1.00);
 
         order.display();
+
+        /**
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
+        Ticket receipt = new Receipt(order);
+        receipt.total();
+        receipt.print();
     }
     public static void display(Product item) {
         System.out.print("\t" + item.toString() + "\n");
