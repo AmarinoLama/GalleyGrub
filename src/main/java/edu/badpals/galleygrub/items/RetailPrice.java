@@ -15,4 +15,20 @@ public class RetailPrice {
         prices.put("medium", 0.25);
         prices.put("large", 0.5);
     }
+
+    public static void display() {
+        RetailPrice objeto = new RetailPrice();
+        System.out.println(objeto);
+    }
+
+    public String toString() {
+        StringBuilder salida = new StringBuilder();
+        for (Map.Entry<String, Double> price : prices.entrySet()) {
+            salida.append(price.getKey())
+                    .append("=")
+                    .append(price.getValue())
+                    .append("\n");
+        };
+        return salida.toString();
+    }
 }
