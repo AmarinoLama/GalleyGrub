@@ -1,4 +1,10 @@
 package edu.badpals.galleygrub.extras;
 
-public class SauceExtra {
+import edu.badpals.galleygrub.order.Comanda;
+
+public class SauceExtra extends Extra {
+    @Override
+    public void sumExtras(Comanda comanda) {
+
+    }
 }
