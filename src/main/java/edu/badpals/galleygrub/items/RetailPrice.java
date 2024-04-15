@@ -21,6 +21,14 @@ public class RetailPrice {
         System.out.println(objeto);
     }
 
+    public static Double getPrice(String extra) {
+        return contains(extra)? prices.get(extra) : 0d;
+    }
+
+    public static Boolean contains(String extra) {
+        return prices.containsKey(extra);
+    }
+
     public String toString() {
         StringBuilder salida = new StringBuilder();
         for (Map.Entry<String, Double> price : prices.entrySet()) {

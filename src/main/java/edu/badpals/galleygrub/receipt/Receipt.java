@@ -21,7 +21,12 @@ public class Receipt implements Ticket {
 
     @Override
     public void setChain(Extra extra) {
+        firstExtra = extra;
+    }
 
+    @Override
+    public Extra getChain(){
+        return this.firstExtra;
     }
 
     @Override
@@ -30,13 +35,17 @@ public class Receipt implements Ticket {
         for (Item item: order.itemList()) {
             counter += item.price();
         }
-        this.total = counter;
-        return counter;
+        this.order.updateTotal(counter);
+        sumExtrasCharge();
+        this.total = this.getOrder().getTotal();
+        return this.total;
     }
 
     @Override
     public void sumExtrasCharge() {
-
+        if(!(getChain()==null)) {
+            this.getChain().sumExtras(this.getOrder());
+        }
     }
 
     @Override
