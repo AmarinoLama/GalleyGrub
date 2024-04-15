@@ -8,6 +8,7 @@ public class Receipt implements Ticket {
 
     private Double total;
     private Comanda order;
+    private Extra firstExtra;
 
     public Receipt(Comanda comanda) {
         this.order = comanda;
