@@ -1,6 +1,7 @@
 package edu.badpals.galleygrub.order;
 
 import edu.badpals.galleygrub.items.Item;
+import edu.badpals.galleygrub.items.ItemFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +13,12 @@ public class Order implements Comanda {
 
     @Override
     public void addItem(String name, double price) {
-        items.add(new Item(name, price));
+        items.add(ItemFactory.getItem(name, price));
     }
 
     @Override
     public void addItem(String name, double price, String extra) {
-        items.add(new Item(name, price, extra));
+        items.add(ItemFactory.getItem(name, price, extra));
     }
 
     @Override
