@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Order implements Comanda {
 
-    private Double total;
+    private Double total = 0d;
     private List<Item> items = new ArrayList<>();
 
     @Override
