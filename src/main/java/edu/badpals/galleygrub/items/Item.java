@@ -45,14 +45,15 @@ public class Item implements Product{
                     .append("....")
                     .append(price())
                     .append("$");
-        } else {
+        } else if (RetailPrice.getPrice(extra()) == 0){
             salida.append(name())
                     .append(" w/ ")
                     .append(extra())
                     .append("....")
                     .append(price())
-                    .append("$")
-                    .append(" + ")
+                    .append("$");
+        } else {
+            salida.append(" + ")
                     .append(RetailPrice.getPrice(extra()))
                     .append("$");
         }
