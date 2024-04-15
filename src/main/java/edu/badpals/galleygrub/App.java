@@ -1,5 +1,6 @@
 package edu.badpals.galleygrub;
 
+import edu.badpals.galleygrub.extras.*;
 import edu.badpals.galleygrub.items.Item;
 import edu.badpals.galleygrub.items.Product;
 import edu.badpals.galleygrub.items.RetailPrice;
@@ -192,6 +193,18 @@ public class App {
         Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
         Extra sauce = new SauceExtra(); // suma el precio de sauce
         Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
+
+        regular.setNextExtra(cheese);
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
+
+        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+
+        Ticket receiptExtra = new Receipt(order);
+        receiptExtra.setChain(regular);
+
+        receiptExtra.total();
+        receiptExtra.print();
     }
     public static void display(Product item) {
         System.out.print("\t" + item.toString() + "\n");
