@@ -4,7 +4,7 @@ public class Item implements Product{
 
     String name;
     Double price;
-    String extra;
+    String extra = "";
 
     public Item(String name, Double price) {
         this.name = name;
@@ -34,16 +34,28 @@ public class Item implements Product{
 
     @Override
     public Boolean isRegular() {
-        return null;
+        return extra().equals("");
     }
 
     @Override
     public String toString() {
         StringBuilder salida = new StringBuilder();
-        salida.append(name())
-                .append("....")
-                .append(price())
-                .append("$");
+        if (extra.equals("")) {
+            salida.append(name())
+                    .append("....")
+                    .append(price())
+                    .append("$");
+        } else {
+            salida.append(name())
+                    .append(" w/ ")
+                    .append(extra())
+                    .append("....")
+                    .append(price())
+                    .append("$")
+                    .append(" + ")
+                    .append(RetailPrice.getPrice(extra()))
+                    .append("$");
+        }
         return salida.toString();
     }
 }
